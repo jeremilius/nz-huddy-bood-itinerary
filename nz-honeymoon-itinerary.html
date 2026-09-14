@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aotearoa — A South Island Honeymoon, 18–27 November 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Work+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+
+  :root{
+    --ink:#17241F;
+    --ink-soft:#3B4A44;
+    --paper:#EEF2EF;
+    --panel:#E3E9E4;
+    --panel-line:#CBD5CE;
+    --white:#FFFFFF;
+    --teal:#1E6E77;
+    --teal-deep:#123F45;
+    --gold:#A9762C;
+    --moss:#46603E;
+    --shadow: 0 18px 40px -22px rgba(18,32,28,0.35);
+    --maxw: 880px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:"Work Sans", -apple-system, sans-serif;
+    font-weight:400;
+    line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{
+    font-family:"Fraunces", serif;
+    font-weight:500;
+    margin:0;
+    color:var(--ink);
+  }
+  p{margin:0 0 1em 0;}
+  a{color:var(--teal-deep);}
+  img{max-width:100%;display:block;}
+
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  .wrap-wide{max-width:1100px; margin:0 auto; padding:0 28px;}
+
+  /* ---------- Nav ---------- */
+  .topnav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(238,242,239,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--panel-line);
+  }
+  .topnav-inner{
+    max-width:1100px; margin:0 auto; padding:14px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+    gap:20px; flex-wrap:wrap;
+  }
+  .brand{
+    font-family:"Fraunces", serif; font-style:italic; font-weight:500;
+    font-size:1.05rem; color:var(--teal-deep); white-space:nowrap;
+  }
+  .navlinks{display:flex; gap:22px; flex-wrap:wrap;}
+  .navlinks a{
+    font-size:0.86rem; color:var(--ink-soft); text-decoration:none;
+    border-bottom:1px solid transparent; padding-bottom:2px;
+  }
+  .navlinks a:hover{border-bottom-color:var(--teal);}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;
+    min-height:78vh;
+    display:flex; align-items:flex-end;
+    background:#0e1a17;
+  }
+  .hero img{
+    position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
+    opacity:0.72;
+  }
+  .hero::after{
+    content:"";
+    position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(10,20,17,0.15) 0%, rgba(10,20,17,0.15) 40%, rgba(9,17,15,0.88) 100%);
+  }
+  .hero-content{
+    position:relative; z-index:2;
+    max-width:1100px; margin:0 auto; padding:60px 28px 48px;
+    width:100%;
+    color:#F2F5F1;
+  }
+  .hero-eyebrow{
+    font-size:0.92rem; color:#CFE0D6; margin-bottom:14px; font-weight:500;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 6.2vw, 5.2rem);
+    line-height:0.98;
+    color:#fff;
+    max-width:14ch;
+  }
+  .hero-dates{
+    margin-top:22px; font-size:1.05rem; color:#DCE8E1;
+  }
+  .hero-credit{
+    position:absolute; bottom:10px; right:16px; z-index:3;
+    font-size:0.68rem; color:rgba(255,255,255,0.55);
+  }
+
+  /* ---------- Glance strip ---------- */
+  .glance{
+    background:var(--teal-deep); color:#EFF4F1;
+    padding:34px 0;
+  }
+  .glance-inner{
+    max-width:1100px; margin:0 auto; padding:0 28px;
+    display:flex; flex-wrap:wrap; gap:34px; align-items:center; justify-content:space-between;
+  }
+  .route-chips{display:flex; align-items:center; gap:10px; flex-wrap:wrap; font-size:0.98rem;}
+  .chip{
+    background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.22);
+    padding:6px 14px; border-radius:999px; font-size:0.88rem;
+  }
+  .chip-sep{color:rgba(255,255,255,0.5); font-size:0.9rem;}
+  .stat-strip{display:flex; gap:34px;}
+  .stat b{
+    display:block; font-family:"Fraunces", serif; font-size:1.7rem; font-weight:500; color:#fff;
+  }
+  .stat span{font-size:0.8rem; color:#BFD3C8;}
+
+  /* ---------- Section headers ---------- */
+  .section{padding:76px 0;}
+  .section-alt{background:var(--panel);}
+  .section-head{max-width:var(--maxw); margin:0 auto 34px; padding:0 28px;}
+  .section-label{
+    color:var(--teal); font-size:0.85rem; font-weight:600; margin-bottom:6px;
+  }
+  .section-head h2{font-size:clamp(1.8rem, 3.4vw, 2.6rem); max-width:22ch;}
+  .section-head p{margin-top:14px; max-width:60ch; color:var(--ink-soft);}
+
+  /* ---------- Route diagram ---------- */
+  .diagram-frame{
+    width:100%;
+    border-radius:4px;
+    border:1px solid var(--panel-line);
+    background:var(--white);
+  }
+  .diagram-frame svg{display:block; width:100%; height:auto;}
+  .diagram-label{
+    font-family:"Work Sans", sans-serif; font-size:15px; font-weight:600; fill:var(--ink);
+  }
+  .diagram-sub{
+    font-family:"Work Sans", sans-serif; font-size:11px; fill:var(--ink-soft);
+  }
+  .diagram-tag{
+    font-family:"Work Sans", sans-serif; font-size:10.5px; fill:var(--ink-soft); font-style:italic;
+  }
+  .map-legend{
+    display:flex; gap:28px; flex-wrap:wrap; margin-top:18px;
+    font-size:0.86rem; color:var(--ink-soft);
+  }
+  .legend-item{display:flex; align-items:center; gap:8px;}
+  .legend-swatch{width:22px; height:0; border-top:3px solid var(--teal);}
+  .legend-swatch.dashed{border-top:3px dashed var(--gold);}
+  .map-note{font-size:0.8rem; color:var(--ink-soft); margin-top:10px; font-style:italic;}
+
+  /* ---------- Chapters ---------- */
+  .chapter{padding:0 0 40px;}
+  .chapter-banner{position:relative; height:38vh; min-height:280px; overflow:hidden;}
+  .chapter-banner img{width:100%; height:100%; object-fit:cover;}
+  .chapter-banner::after{
+    content:""; position:absolute; inset:0;
+    background:linear-gradient(180deg, rgba(15,25,21,0.05), rgba(15,25,21,0.55));
+  }
+  .chapter-tag{
+    position:absolute; left:28px; bottom:22px; z-index:2; color:#fff;
+    display:flex; align-items:baseline; gap:16px;
+  }
+  .chapter-num{font-family:"Fraunces", serif; font-style:italic; font-size:1.4rem; opacity:0.85;}
+  .chapter-tag h2{color:#fff; font-size:clamp(1.9rem,4vw,2.8rem);}
+  .chapter-sub{
+    max-width:var(--maxw); margin:26px auto 0; padding:0 28px;
+    color:var(--ink-soft); font-size:1rem;
+  }
+
+  .timeline{
+    max-width:var(--maxw); margin:36px auto 0; padding:0 28px;
+    position:relative;
+  }
+  .timeline::before{
+    content:"";
+    position:absolute; left:52px; top:8px; bottom:8px; width:1px;
+    background:var(--panel-line);
+  }
+  .day{
+    display:grid; grid-template-columns:88px 1fr; gap:22px;
+    margin-bottom:44px; position:relative;
+  }
+  .day:last-child{margin-bottom:0;}
+  .day::before{
+    content:""; position:absolute; left:18px; top:9px; z-index:1;
+    width:11px; height:11px; border-radius:50%;
+    background:var(--paper); border:2px solid var(--teal);
+  }
+  .day-date{
+    text-align:right; padding-top:4px;
+  }
+  .day-date .dow{display:block; font-size:0.74rem; color:var(--ink-soft); letter-spacing:0.03em;}
+  .day-date .dom{
+    display:block; font-family:"Fraunces", serif; font-size:1.6rem; font-weight:500; color:var(--teal-deep);
+  }
+  .day-body h3{font-size:1.32rem; margin-bottom:10px;}
+  .day-list{list-style:none; margin:0 0 6px; padding:0;}
+  .day-list li{
+    display:grid; grid-template-columns:96px 1fr; gap:14px;
+    padding:7px 0; border-top:1px solid var(--panel-line);
+    font-size:0.95rem;
+  }
+  .day-list li:first-child{border-top:none;}
+  .day-time{color:var(--teal-deep); font-weight:500; font-size:0.85rem; padding-top:1px;}
+  .day-photo{margin-top:16px; border-radius:3px; overflow:hidden;}
+  .day-photo img{width:100%; height:230px; object-fit:cover;}
+  .photo-cap{
+    font-size:0.72rem; color:var(--ink-soft); margin-top:6px; opacity:0.8;
+  }
+  .tip{
+    margin-top:16px; padding:13px 16px;
+    background:var(--white); border-left:3px solid var(--gold);
+    font-size:0.9rem; color:var(--ink-soft); border-radius:0 3px 3px 0;
+  }
+  .tip b{color:var(--ink); font-weight:600;}
+
+  /* ---------- Accommodation table ---------- */
+  table.stay{
+    width:100%; border-collapse:collapse; margin-top:8px; font-size:0.95rem;
+  }
+  table.stay th{
+    text-align:left; font-family:"Work Sans"; font-weight:600; font-size:0.8rem;
+    color:var(--ink-soft); border-bottom:1px solid var(--panel-line); padding:10px 12px;
+  }
+  table.stay td{
+    padding:16px 12px; border-bottom:1px solid var(--panel-line); vertical-align:top;
+  }
+  table.stay td.loc{font-family:"Fraunces", serif; font-size:1.15rem; color:var(--teal-deep);}
+  .nights-badge{
+    display:inline-block; background:var(--panel); border:1px solid var(--panel-line);
+    padding:2px 10px; border-radius:999px; font-size:0.8rem; margin-top:4px;
+  }
+
+  .checklist{margin-top:10px; padding-left:0; list-style:none;}
+  .checklist li{
+    padding:10px 0 10px 30px; border-top:1px solid var(--panel-line);
+    position:relative; font-size:0.95rem;
+  }
+  .checklist li:first-child{border-top:none;}
+  .checklist li::before{
+    content:"–"; position:absolute; left:4px; color:var(--gold); font-weight:600;
+  }
+
+  /* ---------- Practical grid ---------- */
+  .practical-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:28px;
+    max-width:var(--maxw); margin:0 auto; padding:0 28px;
+  }
+  .practical-card{
+    background:var(--white); border:1px solid var(--panel-line); border-radius:4px;
+    padding:22px 24px;
+  }
+  .practical-card h4{font-size:1.05rem; margin-bottom:10px;}
+  .practical-card p, .practical-card ul{font-size:0.92rem; color:var(--ink-soft); margin:0;}
+  .practical-card ul{padding-left:18px; margin-top:6px;}
+  .practical-card li{margin-bottom:5px;}
+
+  /* ---------- Footer ---------- */
+  footer{
+    background:var(--ink); color:#B9C6BF; padding:44px 0 30px;
+  }
+  footer .wrap-wide{display:flex; justify-content:space-between; gap:24px; flex-wrap:wrap; align-items:flex-start;}
+  footer h5{font-family:"Fraunces", serif; font-style:italic; color:#fff; font-size:1.1rem; font-weight:400; margin-bottom:8px;}
+  footer p{font-size:0.82rem; color:#9AAAA1; max-width:46ch;}
+  .credits{font-size:0.72rem; color:#748179; max-width:340px; line-height:1.7;}
+
+  @media (max-width:760px){
+    .practical-grid{grid-template-columns:1fr;}
+    .day{grid-template-columns:64px 1fr; gap:14px;}
+    .timeline::before{left:38px;}
+    .day::before{left:5px;}
+    .day-list li{grid-template-columns:78px 1fr;}
+    .glance-inner{flex-direction:column; align-items:flex-start;}
+    .hero{min-height:64vh;}
+  }
+</style>
+</head>
+<body>
+
+<nav class="topnav">
+  <div class="topnav-inner">
+    <div class="brand">Aotearoa — a honeymoon journal</div>
+    <div class="navlinks">
+      <a href="#glance">Overview</a>
+      <a href="#shape">The loop</a>
+      <a href="#ch-queenstown-1">Queenstown</a>
+      <a href="#ch-wanaka">Wānaka</a>
+      <a href="#ch-fiordland">Fiordland</a>
+      <a href="#ch-queenstown-2">Queenstown II</a>
+      <a href="#stay">Staying</a>
+      <a href="#notes">Notes</a>
+    </div>
+  </div>
+</nav>
+
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lake%20Wakatipu%20%26%20Remarkable%20Mountains.jpg?width=1800" alt="Lake Wakatipu and the Remarkables, Queenstown">
+  <div class="hero-content">
+    <div class="hero-eyebrow">A South Island honeymoon</div>
+    <h1>Queenstown, Wānaka<br>&amp; Fiordland</h1>
+    <div class="hero-dates">18 – 27 November 2026 · Sydney return</div>
+  </div>
+  <div class="hero-credit">Lake Wakatipu &amp; the Remarkables — Wikimedia Commons</div>
+</header>
+
+<section class="glance" id="glance">
+  <div class="glance-inner">
+    <div class="route-chips">
+      <span class="chip">Queenstown</span><span class="chip-sep">→</span>
+      <span class="chip">Wānaka</span><span class="chip-sep">→</span>
+      <span class="chip">Te Anau</span><span class="chip-sep">→</span>
+      <span class="chip">Milford Sound</span><span class="chip-sep">→</span>
+      <span class="chip">Queenstown</span>
+    </div>
+    <div class="stat-strip">
+      <div class="stat"><b>9</b><span>nights</span></div>
+      <div class="stat"><b>4</b><span>bookings</span></div>
+      <div class="stat"><b>3</b><span>regions</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="shape">
+  <div class="section-head">
+    <div class="section-label">The shape of the trip</div>
+    <h2>One loop, three day trips</h2>
+    <p>Not a geographic map — just how the days connect. The solid line is the drive between bases; the dashed spurs are out-and-back day trips from wherever you're staying.</p>
+  </div>
+  <div class="wrap-wide">
+    <div class="diagram-frame">
+      <svg viewBox="0 0 900 560" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram of the trip loop: Queenstown to Wanaka to Te Anau and back, with day trips to Milford Sound, Glenorchy, and Arrowtown">
+        <defs>
+          <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0,0 L10,5 L0,10 Z" fill="#1E6E77"/>
+          </marker>
+        </defs>
+
+        <!-- Main loop: Queenstown -> Wanaka -> Te Anau -> Queenstown -->
+        <line x1="473" y1="442" x2="682" y2="163" stroke="#1E6E77" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="678" y1="142" x2="192" y2="198" stroke="#1E6E77" stroke-width="2.5" marker-end="url(#arrow)"/>
+        <line x1="186" y1="215" x2="444" y2="445" stroke="#1E6E77" stroke-width="2.5" marker-end="url(#arrow)"/>
+
+        <!-- Cardrona waypoint on the Queenstown-Wanaka leg -->
+        <circle cx="568" cy="316" r="3.5" fill="#EEF2EF" stroke="#7C8B83" stroke-width="1.5"/>
+        <text x="578" y="312" class="diagram-tag">via Cardrona</text>
+
+        <!-- Day-trip spurs (dashed) -->
+        <line x1="163" y1="192" x2="68" y2="103" stroke="#A9762C" stroke-width="2.2" stroke-dasharray="6,6"/>
+        <line x1="435" y1="470" x2="235" y2="500" stroke="#A9762C" stroke-width="2.2" stroke-dasharray="6,6"/>
+        <line x1="485" y1="470" x2="645" y2="500" stroke="#A9762C" stroke-width="2.2" stroke-dasharray="6,6"/>
+
+        <!-- Spur nodes (hollow) -->
+        <g>
+          <circle cx="60" cy="95" r="8" fill="#EEF2EF" stroke="#A9762C" stroke-width="2.5"/>
+          <text x="80" y="90" class="diagram-label">Milford Sound</text>
+          <text x="80" y="108" class="diagram-sub">day trip · 23 Nov</text>
+        </g>
+        <g>
+          <circle cx="220" cy="508" r="8" fill="#EEF2EF" stroke="#A9762C" stroke-width="2.5"/>
+          <text x="220" y="535" class="diagram-label" text-anchor="middle">Glenorchy</text>
+          <text x="220" y="552" class="diagram-sub" text-anchor="middle">day trip · 24 Nov</text>
+        </g>
+        <g>
+          <circle cx="660" cy="508" r="8" fill="#EEF2EF" stroke="#A9762C" stroke-width="2.5"/>
+          <text x="660" y="535" class="diagram-label" text-anchor="middle">Arrowtown</text>
+          <text x="660" y="552" class="diagram-sub" text-anchor="middle">day trip · 25 Nov</text>
+        </g>
+
+        <!-- Main loop nodes (solid) -->
+        <g>
+          <circle cx="170" cy="200" r="10" fill="#1E6E77" stroke="#123F45" stroke-width="2"/>
+          <text x="60" y="228" class="diagram-label">Te Anau</text>
+          <text x="60" y="248" class="diagram-sub">2 nights · 22–24 Nov</text>
+        </g>
+        <g>
+          <circle cx="700" cy="140" r="10" fill="#1E6E77" stroke="#123F45" stroke-width="2"/>
+          <text x="716" y="120" class="diagram-label">Wānaka</text>
+          <text x="716" y="140" class="diagram-sub">2 nights · 20–22 Nov</text>
+        </g>
+        <g>
+          <circle cx="460" cy="460" r="12" fill="#1E6E77" stroke="#123F45" stroke-width="2.5"/>
+          <text x="460" y="500" class="diagram-label" text-anchor="middle">Queenstown</text>
+          <text x="460" y="519" class="diagram-sub" text-anchor="middle">start &amp; finish · 5 nights total</text>
+        </g>
+      </svg>
+    </div>
+    <div class="map-legend">
+      <div class="legend-item"><span class="legend-swatch"></span> Drive between bases</div>
+      <div class="legend-item"><span class="legend-swatch dashed"></span> Day trip, there and back</div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CHAPTER I — QUEENSTOWN ================= -->
+<div class="chapter" id="ch-queenstown-1">
+  <div class="chapter-banner">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Skyline%20Queenstown%20Gondola.jpg?width=1600" alt="Skyline Gondola above Queenstown">
+    <div class="chapter-tag">
+      <span class="chapter-num">I</span>
+      <h2>Queenstown</h2>
+    </div>
+  </div>
+  <p class="chapter-sub">Two nights to land, adjust, and get one big adventure day out of the way — gondola views, whitewater, and a soak under the stars.</p>
+
+  <div class="timeline">
+    <div class="day">
+      <div class="day-date"><span class="dow">Wed</span><span class="dom">18</span></div>
+      <div class="day-body">
+        <h3>Arrive Queenstown</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Afternoon</span><span>Settle into accommodation, stroll the lakefront</span></li>
+          <li><span class="day-time">Evening</span><span>Dinner at a lake-view restaurant in town</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Thu</span><span class="dom">19</span></div>
+      <div class="day-body">
+        <h3>Queenstown adventure day</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Skyline Gondola up Bob's Peak, then the luge tracks — panoramic views over Lake Wakatipu and the Remarkables</span></li>
+          <li><span class="day-time">Afternoon</span><span>White water rafting on the Kawarau River (grade 2–3) through Gibbston Valley — a proper first-timer's adventure without the bigger risk of the Shotover</span></li>
+          <li><span class="day-time">Evening</span><span>Onsen Hot Pools — a private cedar tub over the Shotover Canyon — then dinner at Stratosfare, back up the gondola for sunset</span></li>
+        </ul>
+        <div class="day-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Kawarau%20Gorge.%20Otago%20NZ.jpg?width=1200" alt="Kawarau Gorge, Otago">
+        </div>
+        <p class="photo-cap">The Kawarau Gorge, where the afternoon's rafting runs</p>
+        <div class="tip"><b>Book ahead:</b> Onsen Hot Pools sell out fast in season — lock in a slot as soon as dates are firm.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER II — WANAKA ================= -->
+<div class="chapter section-alt" id="ch-wanaka">
+  <div class="chapter-banner">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Lonely%20tree%20of%20Wanaka.jpg?width=1600" alt="That Wanaka Tree, Lake Wanaka">
+    <div class="chapter-tag">
+      <span class="chapter-num">II</span>
+      <h2>Wānaka</h2>
+    </div>
+  </div>
+  <p class="chapter-sub">An hour over the Crown Range to Queenstown's quieter, wine-and-hiking sister — a lakeside willow, a vineyard view, and a proper mountain hike.</p>
+
+  <div class="timeline">
+    <div class="day">
+      <div class="day-date"><span class="dow">Fri</span><span class="dom">20</span></div>
+      <div class="day-body">
+        <h3>Drive to Wānaka</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Crown Range drive — New Zealand's highest main road — with a stop at Cardrona (distillery tasting, or the historic 1863 Cardrona Hotel garden bar)</span></li>
+          <li><span class="day-time">Afternoon</span><span>Arrive Wānaka — "That Wanaka Tree" and a wander through the town's laneways</span></li>
+          <li><span class="day-time">Evening</span><span>Rippon Winery — arguably the best vineyard view in New Zealand, right on Lake Wānaka</span></li>
+        </ul>
+        <div class="tip"><b>Book ahead:</b> Rippon tastings are free but limited — reserve on their website well before you go.</div>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Sat</span><span class="dom">21</span></div>
+      <div class="day-body">
+        <h3>Roy's Peak &amp; Mou Waho Island</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Roy's Peak hike (the iconic viewpoint) — or Rocky Mountain for a shorter, quieter alternative</span></li>
+          <li><span class="day-time">Afternoon</span><span>Mou Waho Island — a water taxi across the lake, a short walk to Arethusa Pool (a lake on an island in a lake), then a swim on the beach</span></li>
+        </ul>
+        <div class="day-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Roys%20Peak%20view%20s.jpg?width=1200" alt="View from Roy's Peak, Wanaka">
+        </div>
+        <p class="photo-cap">The view from Roy's Peak over Lake Wānaka</p>
+        <div class="tip"><b>Timing:</b> Roy's Peak is a 5–6 hour return hike, fully exposed to sun — start early to beat both the crowds and the midday heat.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER III — FIORDLAND ================= -->
+<div class="chapter" id="ch-fiordland">
+  <div class="chapter-banner">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Milford%20Sound%20Mitre%20Peak.JPG?width=1800" alt="Mitre Peak, Milford Sound">
+    <div class="chapter-tag">
+      <span class="chapter-num">III</span>
+      <h2>Fiordland &amp; Milford Sound</h2>
+    </div>
+  </div>
+  <p class="chapter-sub">The reason most people come to the South Island at all — a base in Te Anau, glowworms after dark, and a cruise past Mitre Peak.</p>
+
+  <div class="timeline">
+    <div class="day">
+      <div class="day-date"><span class="dow">Sun</span><span class="dom">22</span></div>
+      <div class="day-body">
+        <h3>Drive to Te Anau</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Drive to Te Anau, gateway to Fiordland National Park (~2.5–3 hrs)</span></li>
+          <li><span class="day-time">Afternoon</span><span>Relax on the Te Anau lakefront — a quiet, low-key town</span></li>
+          <li><span class="day-time">Evening</span><span>Te Anau Glowworm Caves — a boat trip through limestone caves lit only by thousands of glowworms</span></li>
+        </ul>
+        <div class="day-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Te%20Anau%20Downs%201.jpg?width=1200" alt="Te Anau Downs, Lake Te Anau">
+        </div>
+        <p class="photo-cap">Lake Te Anau, near Te Anau Downs</p>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Mon</span><span class="dom">23</span></div>
+      <div class="day-body">
+        <h3>Milford Sound</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Drive the Milford Road, stopping at Mirror Lakes, The Chasm, and Pop's Lookout along the way</span></li>
+          <li><span class="day-time">Midday</span><span>2-hour Milford Sound cruise — past Mitre Peak, Stirling Falls, seal colonies, and often dolphins</span></li>
+          <li><span class="day-time">Afternoon</span><span>Drive back to Te Anau</span></li>
+        </ul>
+        <div class="tip"><b>Pack for it:</b> sandflies at Milford are notorious — bring repellent — and take a warm layer even in summer, the water and wind stay cool.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= CHAPTER IV — QUEENSTOWN II ================= -->
+<div class="chapter section-alt" id="ch-queenstown-2">
+  <div class="chapter-banner">
+    <img src="https://commons.wikimedia.org/wiki/Special:FilePath/TSS%20Earnslaw%20Queenstown%20NZ.jpg?width=1600" alt="TSS Earnslaw steamship, Queenstown">
+    <div class="chapter-tag">
+      <span class="chapter-num">IV</span>
+      <h2>Back to Queenstown</h2>
+    </div>
+  </div>
+  <p class="chapter-sub">Three nights to close out the trip — a wild valley, a gold-rush town, wine country, and a slow, celebratory finish.</p>
+
+  <div class="timeline">
+    <div class="day">
+      <div class="day-date"><span class="dow">Tue</span><span class="dom">24</span></div>
+      <div class="day-body">
+        <h3>Drive back + Glenorchy</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Drive back to Queenstown via Te Anau</span></li>
+          <li><span class="day-time">Afternoon</span><span>Glenorchy day trip — Bennett's Bluff lookout, the historic Red Boat Shed &amp; jetty, the free Glenorchy Lagoon Walkway, gelato at Mrs Woolly's General Store, then Dart River Funyaks (inflatable kayaking through Lord of the Rings country)</span></li>
+        </ul>
+        <div class="day-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Glenorchy%20at%20the%20Head%20of%20Lake%20Wakatipu.jpg?width=1200" alt="Glenorchy at the head of Lake Wakatipu">
+        </div>
+        <p class="photo-cap">Glenorchy, at the head of Lake Wakatipu</p>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Wed</span><span class="dom">25</span></div>
+      <div class="day-body">
+        <h3>Arrowtown &amp; wine country</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Arrowtown's historic gold-rush streets, plus Ayrburn — a restored estate with restaurants and Dorothy's, a cosy wine-bar-meets-bookshop</span></li>
+          <li><span class="day-time">Afternoon</span><span>Gibbston Valley wineries — Central Otago's pinot noir country</span></li>
+        </ul>
+        <div class="day-photo">
+          <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Buckingham%20Street%20Historic%20Area%20Arrowtown.jpg?width=1200" alt="Buckingham Street, Arrowtown">
+        </div>
+        <p class="photo-cap">Buckingham Street, Arrowtown's historic centre</p>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Thu</span><span class="dom">26</span></div>
+      <div class="day-body">
+        <h3>Wind down</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Day</span><span>Free morning and afternoon — spa, shopping, or just relax by the lake</span></li>
+          <li><span class="day-time">Evening</span><span>TSS Earnslaw steamship cruise across Lake Wakatipu, then a BBQ dinner at Walter Peak High Country Farm</span></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="day">
+      <div class="day-date"><span class="dow">Fri</span><span class="dom">27</span></div>
+      <div class="day-body">
+        <h3>Depart Queenstown → Sydney</h3>
+        <ul class="day-list">
+          <li><span class="day-time">Morning</span><span>Head to the airport 2–3 hrs before departure; check-in closes 60 minutes prior</span></li>
+        </ul>
+        <div class="tip"><b>Before you pack:</b> if you've been hiking, give boots and gear a clean the night before — NZ biosecurity checks outgoing gear for dirt and seeds.</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ================= STAY ================= -->
+<section class="section" id="stay">
+  <div class="section-head">
+    <div class="section-label">Accommodation</div>
+    <h2>Four bookings, three towns</h2>
+    <p>You'll need separate bookings for each leg — book sooner rather than later, since November is shoulder season and still popular.</p>
+  </div>
+  <div class="wrap">
+    <table class="stay">
+      <thead><tr><th>Location</th><th>Check-in</th><th>Check-out</th></tr></thead>
+      <tbody>
+        <tr><td class="loc">Queenstown<div class="nights-badge">2 nights</div></td><td>Wed 18 Nov</td><td>Fri 20 Nov</td></tr>
+        <tr><td class="loc">Wānaka<div class="nights-badge">2 nights</div></td><td>Fri 20 Nov</td><td>Sun 22 Nov</td></tr>
+        <tr><td class="loc">Te Anau<div class="nights-badge">2 nights</div></td><td>Sun 22 Nov</td><td>Tue 24 Nov</td></tr>
+        <tr><td class="loc">Queenstown<div class="nights-badge">3 nights</div></td><td>Tue 24 Nov</td><td>Fri 27 Nov</td></tr>
+      </tbody>
+    </table>
+
+    <ul class="checklist">
+      <li><b>Queenstown:</b> stay central and walkable — easy access back from Stratosfare, the TSS Earnslaw dock, and restaurants.</li>
+      <li><b>Wānaka:</b> lakefront or near the town centre, close to the tree and the lake walk.</li>
+      <li><b>Te Anau:</b> a small town where everything's close together — don't overspend, it's mainly your base for Milford and the caves.</li>
+      <li><b>Parking:</b> confirm it's included, especially for central Queenstown properties.</li>
+      <li><b>Worth asking:</b> mention it's a honeymoon when booking — many places offer a small upgrade or perk for free.</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ================= NOTES ================= -->
+<section class="section section-alt" id="notes">
+  <div class="section-head">
+    <div class="section-label">Before you go</div>
+    <h2>Practical notes</h2>
+  </div>
+  <div class="practical-grid">
+    <div class="practical-card">
+      <h4>Book ahead</h4>
+      <ul>
+        <li>Onsen Hot Pools</li>
+        <li>Rippon Winery tasting</li>
+        <li>Mou Waho Island water taxi</li>
+        <li>Te Anau Glowworm Caves</li>
+        <li>Milford Sound cruise (weather-dependent — check forecasts closer to the day)</li>
+      </ul>
+    </div>
+    <div class="practical-card">
+      <h4>Pack for it</h4>
+      <ul>
+        <li>Layers — November is spring, mornings and evenings are cool even when days are warm</li>
+        <li>Insect repellent for Milford Sound (sandflies are legendary)</li>
+        <li>Proper hiking shoes for Roy's Peak / Rob Roy</li>
+        <li>A warm layer for the Milford cruise — the water and wind stay cool</li>
+      </ul>
+    </div>
+    <div class="practical-card">
+      <h4>Getting around</h4>
+      <p>A rental car is the easiest way to do this loop — roads are well-sealed and scenic. The Crown Range and Milford Road are spectacular but narrow in sections, so drive with care, especially if unfamiliar with mountain roads.</p>
+    </div>
+    <div class="practical-card">
+      <h4>Departure day</h4>
+      <p>Arrive at Queenstown Airport 2–3 hours before your flight to Sydney; check-in closes 60 minutes prior. If you've been hiking or camping, clean gear the night before — NZ biosecurity checks outgoing boots and equipment for dirt and seeds.</p>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap-wide">
+    <div>
+      <h5>Aotearoa</h5>
+      <p>A nine-night South Island honeymoon loop — Queenstown, Wānaka, and Fiordland. Built for 18–27 November 2026.</p>
+    </div>
+    <div class="credits">
+      Photography via Wikimedia Commons, used under Creative Commons licences, including work by Tom Hall, Poco a poco, LBM1948, and other Commons contributors.
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
