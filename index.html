@@ -233,22 +233,37 @@
   }
   .tip b{color:var(--ink); font-weight:600;}
 
-  /* ---------- Accommodation table ---------- */
-  table.stay{
-    width:100%; border-collapse:collapse; margin-top:8px; font-size:0.95rem;
+  .stay-note{
+    margin-top:16px; padding:14px 16px;
+    background:var(--panel); border-left:3px solid var(--teal);
+    border-radius:0 3px 3px 0;
   }
-  table.stay th{
-    text-align:left; font-family:"Work Sans"; font-weight:600; font-size:0.8rem;
-    color:var(--ink-soft); border-bottom:1px solid var(--panel-line); padding:10px 12px;
+  .stay-note .stay-note-label{
+    font-size:0.72rem; font-weight:600; color:var(--teal-deep); margin-bottom:3px;
   }
-  table.stay td{
-    padding:16px 12px; border-bottom:1px solid var(--panel-line); vertical-align:top;
+  .stay-note h5{
+    font-family:"Fraunces", serif; font-size:1.05rem; font-weight:500; color:var(--teal-deep); margin-bottom:4px;
   }
-  table.stay td.loc{font-family:"Fraunces", serif; font-size:1.15rem; color:var(--teal-deep);}
-  .nights-badge{
-    display:inline-block; background:var(--panel); border:1px solid var(--panel-line);
-    padding:2px 10px; border-radius:999px; font-size:0.8rem; margin-top:4px;
+  .stay-note p{font-size:0.85rem; color:var(--ink-soft); margin:0;}
+
+  /* ---------- Accommodation cards ---------- */
+  .stay-grid{
+    display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:8px;
   }
+  .stay-card{
+    background:var(--white); border:1px solid var(--panel-line); border-radius:4px;
+    padding:22px 24px;
+  }
+  .stay-meta{
+    font-size:0.78rem; font-weight:600; color:var(--teal); letter-spacing:0.02em; margin-bottom:8px;
+  }
+  .stay-card h4{
+    font-size:1.28rem; font-weight:500; color:var(--teal-deep); margin-bottom:4px;
+  }
+  .stay-address{
+    font-size:0.82rem; color:var(--ink-soft); font-style:italic; margin-bottom:10px;
+  }
+  .stay-card p:last-child{font-size:0.92rem; margin-bottom:0;}
 
   .checklist{margin-top:10px; padding-left:0; list-style:none;}
   .checklist li{
@@ -285,6 +300,7 @@
 
   @media (max-width:760px){
     .practical-grid{grid-template-columns:1fr;}
+    .stay-grid{grid-template-columns:1fr;}
     .day{grid-template-columns:64px 1fr; gap:14px;}
     .timeline::before{left:38px;}
     .day::before{left:5px;}
@@ -427,9 +443,14 @@
       <div class="day-body">
         <h3>Arrive Queenstown</h3>
         <ul class="day-list">
-          <li><span class="day-time">Afternoon</span><span>Settle into accommodation, stroll the lakefront</span></li>
+          <li><span class="day-time">Afternoon</span><span>Check in to the Rendezvous Heritage Hotel, stroll the lakefront</span></li>
           <li><span class="day-time">Evening</span><span>Dinner at a lake-view restaurant in town</span></li>
         </ul>
+        <div class="stay-note">
+          <div class="stay-note-label">Staying here</div>
+          <h5>Rendezvous Heritage Hotel</h5>
+          <p>91 Fernhill Road, Queenstown — schist-stone-and-cedar hotel above Lake Wakatipu with Remarkables views, an indoor/outdoor pool, and a spa on site. About 10 minutes' drive from town.</p>
+        </div>
       </div>
     </div>
 
@@ -470,10 +491,15 @@
         <h3>Drive to Wānaka</h3>
         <ul class="day-list">
           <li><span class="day-time">Morning</span><span>Crown Range drive — New Zealand's highest main road — with a stop at Cardrona (distillery tasting, or the historic 1863 Cardrona Hotel garden bar)</span></li>
-          <li><span class="day-time">Afternoon</span><span>Arrive Wānaka — "That Wanaka Tree" and a wander through the town's laneways</span></li>
+          <li><span class="day-time">Afternoon</span><span>Arrive Wānaka — check in to Luna Lodge, then "That Wanaka Tree" and a wander through the town's laneways</span></li>
           <li><span class="day-time">Evening</span><span>Rippon Winery — arguably the best vineyard view in New Zealand, right on Lake Wānaka</span></li>
         </ul>
         <div class="tip"><b>Book ahead:</b> Rippon tastings are free but limited — reserve on their website well before you go.</div>
+        <div class="stay-note">
+          <div class="stay-note-label">Staying here</div>
+          <h5>Luna Lodge</h5>
+          <p>24 Tenby St, Wānaka — quiet and boutique, a 5-minute drive from the tree and close to the golf club and lakefront. No on-site breakfast, so plan to grab it in town.</p>
+        </div>
       </div>
     </div>
 
@@ -513,13 +539,18 @@
         <h3>Drive to Te Anau</h3>
         <ul class="day-list">
           <li><span class="day-time">Morning</span><span>Drive to Te Anau, gateway to Fiordland National Park (~2.5–3 hrs)</span></li>
-          <li><span class="day-time">Afternoon</span><span>Relax on the Te Anau lakefront — a quiet, low-key town</span></li>
+          <li><span class="day-time">Afternoon</span><span>Check in to Arran Motel, relax on the Te Anau lakefront — a quiet, low-key town</span></li>
           <li><span class="day-time">Evening</span><span>Te Anau Glowworm Caves — a boat trip through limestone caves lit only by thousands of glowworms</span></li>
         </ul>
         <div class="day-photo">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Te%20Anau%20Downs%201.jpg?width=1200" alt="Te Anau Downs, Lake Te Anau">
         </div>
         <p class="photo-cap">Lake Te Anau, near Te Anau Downs</p>
+        <div class="stay-note">
+          <div class="stay-note-label">Staying here</div>
+          <h5>Arran Motel</h5>
+          <p>64 Quintin Drive, Te Anau — central and walkable, a couple of minutes from the Fiordland National Park Visitor Centre and an easy stroll to the lake and restaurants. Self-contained kitchenette rooms; ask for breakfast the evening before if you want it.</p>
+        </div>
       </div>
     </div>
 
@@ -555,9 +586,14 @@
       <div class="day-body">
         <h3>Drive back + Glenorchy</h3>
         <ul class="day-list">
-          <li><span class="day-time">Morning</span><span>Drive back to Queenstown via Te Anau</span></li>
+          <li><span class="day-time">Morning</span><span>Drive back to Queenstown via Te Anau, check in to the Hilton Queenstown Resort &amp; Spa</span></li>
           <li><span class="day-time">Afternoon</span><span>Glenorchy day trip — Bennett's Bluff lookout, the historic Red Boat Shed &amp; jetty, the free Glenorchy Lagoon Walkway, gelato at Mrs Woolly's General Store, then Dart River Funyaks (inflatable kayaking through Lord of the Rings country)</span></li>
         </ul>
+        <div class="stay-note">
+          <div class="stay-note-label">Staying here</div>
+          <h5>Hilton Queenstown Resort &amp; Spa</h5>
+          <p>79 Peninsula Road, Kelvin Heights — a proper resort finish right on the lake, with an indoor pool, full-service spa, and the on-site Wakatipu Grill. It's about 15–20 minutes' drive (or a scenic water taxi) from central Queenstown — not walkable like your first stay, so factor that into evenings out.</p>
+        </div>
         <div class="day-photo">
           <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Glenorchy%20at%20the%20Head%20of%20Lake%20Wakatipu.jpg?width=1200" alt="Glenorchy at the head of Lake Wakatipu">
         </div>
@@ -608,26 +644,41 @@
 <section class="section" id="stay">
   <div class="section-head">
     <div class="section-label">Accommodation</div>
-    <h2>Four bookings, three towns</h2>
-    <p>You'll need separate bookings for each leg — book sooner rather than later, since November is shoulder season and still popular.</p>
+    <h2>Where you're staying</h2>
+    <p>Four bookings across three towns, all confirmed.</p>
   </div>
   <div class="wrap">
-    <table class="stay">
-      <thead><tr><th>Location</th><th>Check-in</th><th>Check-out</th></tr></thead>
-      <tbody>
-        <tr><td class="loc">Queenstown<div class="nights-badge">2 nights</div></td><td>Wed 18 Nov</td><td>Fri 20 Nov</td></tr>
-        <tr><td class="loc">Wānaka<div class="nights-badge">2 nights</div></td><td>Fri 20 Nov</td><td>Sun 22 Nov</td></tr>
-        <tr><td class="loc">Te Anau<div class="nights-badge">2 nights</div></td><td>Sun 22 Nov</td><td>Tue 24 Nov</td></tr>
-        <tr><td class="loc">Queenstown<div class="nights-badge">3 nights</div></td><td>Tue 24 Nov</td><td>Fri 27 Nov</td></tr>
-      </tbody>
-    </table>
+    <div class="stay-grid">
+      <div class="stay-card">
+        <div class="stay-meta">Queenstown · 2 nights · 18–20 Nov</div>
+        <h4>Rendezvous Heritage Hotel</h4>
+        <p class="stay-address">91 Fernhill Road, Queenstown</p>
+        <p>Schist-stone-and-cedar hotel above Lake Wakatipu with Remarkables views, an indoor/outdoor pool, and a spa on site — about 10 minutes' drive from town. Handy for winding down after the rafting-and-hot-pools day.</p>
+      </div>
+      <div class="stay-card">
+        <div class="stay-meta">Wānaka · 2 nights · 20–22 Nov</div>
+        <h4>Luna Lodge</h4>
+        <p class="stay-address">24 Tenby St, Wānaka</p>
+        <p>Quiet, boutique, and highly rated — a 5-minute drive from That Wanaka Tree and close to the golf club and lakefront. No on-site breakfast, so plan to grab it in town.</p>
+      </div>
+      <div class="stay-card">
+        <div class="stay-meta">Te Anau · 2 nights · 22–24 Nov</div>
+        <h4>Arran Motel</h4>
+        <p class="stay-address">64 Quintin Drive, Te Anau</p>
+        <p>Central and walkable — a couple of minutes from the Fiordland National Park Visitor Centre and an easy stroll to the lake and restaurants. Self-contained kitchenette rooms; ask for breakfast the evening before if you want it.</p>
+      </div>
+      <div class="stay-card">
+        <div class="stay-meta">Queenstown · 3 nights · 24–27 Nov</div>
+        <h4>Hilton Queenstown Resort &amp; Spa</h4>
+        <p class="stay-address">79 Peninsula Road, Kelvin Heights</p>
+        <p>A proper resort finish — right on the lake, with an indoor pool, full-service spa, and the on-site Wakatipu Grill. It's at Kelvin Heights, about 15–20 minutes' drive (or a water taxi) from central Queenstown, so it suits your free wind-down day better than a night out on the town.</p>
+      </div>
+    </div>
 
     <ul class="checklist">
-      <li><b>Queenstown:</b> stay central and walkable — easy access back from Stratosfare, the TSS Earnslaw dock, and restaurants.</li>
-      <li><b>Wānaka:</b> lakefront or near the town centre, close to the tree and the lake walk.</li>
-      <li><b>Te Anau:</b> a small town where everything's close together — don't overspend, it's mainly your base for Milford and the caves.</li>
-      <li><b>Parking:</b> confirm it's included, especially for central Queenstown properties.</li>
-      <li><b>Worth asking:</b> mention it's a honeymoon when booking — many places offer a small upgrade or perk for free.</li>
+      <li><b>Parking:</b> both Queenstown hotels have on-site parking, though the Hilton charges for it — worth confirming rates when you check in.</li>
+      <li><b>Worth asking:</b> mention it's a honeymoon at check-in — many hotels, especially the Hilton, will offer a small upgrade or perk for free if you ask.</li>
+      <li><b>Milford day:</b> since Arran Motel is self-contained, it's an easy spot to eat in the night before or after the Milford Sound cruise if you'd rather not go out.</li>
     </ul>
   </div>
 </section>
